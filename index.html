@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Royal Educon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .logo {
+            margin-top: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        #statusMessage {
+            margin-top: 20px;
+            font-weight: bold;
+            color: red;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            width: 300px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo at the top -->
+    <div class="logo">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgupYustZelLriiRRhty5B0z4tyBPhMfOp_xTgv0BXL99hDfBORUAt4aGWJlKGCTQT7xg5YsZDQi0hdVQpO6sr_OVp9gHBrIDs20ncNXqF44CKQiMJn1AKUkCsmOyg8DTisfS0-sCUHkLICWQU7JHxeb4_clHsxO9LlkJGR4Noz-31B-nqiRSyl1NXn-8I/s320/WhatsApp%20Image%202024-09-23%20at%2016.43.34.jpeg" alt="Logo" style="width: 150px;">
+    </div>
+
+    <!-- Heading -->
+    <h2>Admin Login Panel</h2>
+    <p>Enter Admin Username and Password to access the panel.</p>
+
+    <!-- Login form -->
+    <div style="text-align: center; margin-top: 20px;">
+        <input type="text" id="usernameInput" placeholder="Username">
+        <br>
+        <input type="password" id="passwordInput" placeholder="Password">
+        <br>
+        <button id="loginButton">Submit</button>
+    </div>
+
+    <!-- Status message -->
+    <p id="statusMessage"></p>
+
+    <script>
+        // Add event listener to the login button
+        document.getElementById("loginButton").addEventListener("click", function() {
+            // Expected credentials
+            const correctUsername = "RoyalEducon";
+            const correctPassword = "Admin1";
+
+            // Get the entered username and password
+            const enteredUsername = document.getElementById("usernameInput").value.trim();
+            const enteredPassword = document.getElementById("passwordInput").value.trim();
+
+            // Check credentials
+            if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+                // Redirect to the specified link on successful login
+                window.location.href = "https://sites.google.com/view/rstudentlogin/home";
+            } else {
+                // Show error message for incorrect credentials
+                document.getElementById("statusMessage").innerText = "Invalid username or password. Please try again.";
+            }
+        });
+    </script>
+</body>
+</html>
